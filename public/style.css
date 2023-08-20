@@ -1,0 +1,58 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.head{
+    font-family: system-ui;
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    color: red;
+}
+
+/* login style */
+.h1{
+    color: #9a616d;
+}
+
+.small{
+    text-decoration: none;
+    float: right;
+}
+
+form, a{
+    text-decoration: none;
+}
+
+.img-fluid{
+    box-shadow: 4px 0px 5px -2px rgba(0,0,0,0.75);
+}
+
+.form-floating{
+    border: 2px solid #4b4a4d;
+    border-radius: var(--bs-border-radius);
+}
+
+.btn-dark{
+    display: flex-end;
+    background: #9a616d;
+    border: none;
+}
+
+.btn-dark:hover{
+    background: #c4919c;
+}
+
+.required{
+    content: "*";
+    color: red;
+}
+
+.homepage{
+background: url(./pexels-stanley-morales-1454360.jpg);
+background-size: cover;
+background-repeat: no-repeat;
+
+}
