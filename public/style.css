@@ -10,53 +10,17 @@
     height: 100%;
     background-size: cover;
     background-repeat: no-repeat;    
-   
+    
 }
 
-
+.head .brace-head{
+    color: #3176b1;
+}
 
 .head h2{
     color: white;
     z-index: 1;
 }
-
-.head {
-    top: 0;
-    width: 100%;
-    height: 37.5;
-    background-size: contain;
-    position: relative;
-}
-
-/* @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
-    .head h1 {
-        margin: 30px 0 10px 0;
-        font-size: 10px;
-        font-weight: 700;
-        line-height: 56px;
-        color: red;
-    }
-} */
-
-
-.head h1 {
-    letter-spacing: 0.2ch;
-    font-size: 60px;
-    font-weight: 700;
-    line-height: 56px;
-    color: #00d2dd;
-}
-
-
-.head::before {
-    content: "";
-    background: rgba(0, 0, 0, 0.267);
-    position: absolute;
-    bottom: 0;
-    top: 0;
-    left: 0;
-    right: 0; 
-} 
 
 .head {
     position: absolute;
@@ -71,20 +35,49 @@
     text-align: center;
 }
 
-.head .btn-dark{  
-    z-index: 1;
+.head h1 {
+    letter-spacing: 0.2ch;
+    font-size: 300%;
+    font-weight: 700;
+    line-height: 56px;
+    color: #3176b1;
 }
+
+.head h4 {
+    letter-spacing: 0.2ch;
+    font-size: 5ch;
+    font-weight: 700;
+    line-height: 56px;
+    color: #71c3e1;
+}
+
+.head::before {
+    content: "";
+    background: rgba(0, 0, 0, 0.267);
+    position: absolute;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0; 
+} 
+
 
 
 /* login style */
-.h1{
-    color: #9a616d;
+
+#dp{position: absolute;
+    top: 10%;
+    left: 70%;
+    border: 3px solid #9A616D;
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;        
+    display: inline;
+    align-items: end;
+    align-content: center;
 }
 
-.small{
-    text-decoration: none;
-    float: right;
-}
+
 
 form, a{
     text-decoration: none;
@@ -103,6 +96,7 @@ form, a{
     display: flex-end;
     background: #9a616d;
     border: none;
+    z-index: 1;
 }
 
 .btn-dark:hover{
