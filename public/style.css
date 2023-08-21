@@ -4,13 +4,77 @@
     box-sizing: border-box;
 }
 
-.head{
-    font-family: system-ui;
-    display: grid;
-    justify-content: center;
-    align-content: center;
-    color: red;
+.homepage{
+    background: url(./pexels-stanley-morales-1454360.jpg);
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;    
+   
 }
+
+
+
+.head h2{
+    color: white;
+    z-index: 1;
+}
+
+.head {
+    top: 0;
+    width: 100%;
+    height: 37.5;
+    background-size: contain;
+    position: relative;
+}
+
+/* @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+    .head h1 {
+        margin: 30px 0 10px 0;
+        font-size: 10px;
+        font-weight: 700;
+        line-height: 56px;
+        color: red;
+    }
+} */
+
+
+.head h1 {
+    letter-spacing: 0.2ch;
+    font-size: 60px;
+    font-weight: 700;
+    line-height: 56px;
+    color: #00d2dd;
+}
+
+
+.head::before {
+    content: "";
+    background: rgba(0, 0, 0, 0.267);
+    position: absolute;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0; 
+} 
+
+.head {
+    position: absolute;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.head .btn-dark{  
+    z-index: 1;
+}
+
 
 /* login style */
 .h1{
@@ -50,9 +114,3 @@ form, a{
     color: red;
 }
 
-.homepage{
-background: url(./pexels-stanley-morales-1454360.jpg);
-background-size: cover;
-background-repeat: no-repeat;
-
-}
