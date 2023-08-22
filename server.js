@@ -11,7 +11,7 @@ require("dotenv").config()
 const expressSession = require('express-session')({
     secret: 'secret',
     resave: false,
-    saveUninitialized: false,
+    saveUninitialized: true,
 });
 
 //middlewares
