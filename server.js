@@ -2,24 +2,27 @@ const express = require("express")
 const mongoose = require("mongoose")
 const path = require("path")
 const bodyParser = require("body-parser")
+const expressSession = require("express-session")
 const app = express()
 
 
 require("dotenv").config()
 
 //express session
-const expressSession = require('express-session')({
-    secret: 'secret',
+app.use(expressSession({
+    secret: 'your-secret-key',
     resave: false,
-    saveUninitialized: true,
-});
+    saveUninitialized: true
+}));
+
 
 //middlewares
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
  
 app.use(express.static(path.join(__dirname, 'public')));
-app.use(expressSession);
+app.use(express.json())
+
 
 
 app.set('views', './views')
@@ -44,11 +47,11 @@ app.get("/login", (req, res) =>{
 })
 
 app.get('/logout', (req, res) => {
-
     req.session.destroy(() => {
-        res.redirect('/login')  
+        res.redirect('/login')
     })
 })
+
 
 app.get("/register", (req, res) =>{
     res.render("register.ejs")
