@@ -31,4 +31,4 @@ function initialize(passport, getUserBystudentCode){
    
 
 
-    module.exports = initialize
+   

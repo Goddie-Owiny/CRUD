@@ -1,9 +1,7 @@
-const express = require("express");
-const bcrypt = require("bcrypt");
-const passport = require("passport")
-const router = express.Router();
+const express = require("express")
+const bcrypt = require("bcrypt")
 const validator = require("validator")
-
+const router = express.Router()
 const userModel = require("../model/userModel");
 const jwt = require("jsonwebtoken");
 
@@ -23,32 +21,20 @@ router.get("/register", (req, res) => {
 router.post("/", async (req, res) => {
     try{
 
-        const {username, level, studentCode, password} = req.body;
+        const {username, password, level, studentCode} = req.body;
      
         let user = await userModel.findOne({studentCode});
-        
-      
-        if(user) {
-            const errorMessage = "Student with the given Code already exist...";
-            return res.render('register', { errorMessage }); 
-        } 
      
-        if(!username || !studentCode || !password){
-            const errorMessage = "All fields are required...";
-            return res.render('register', { errorMessage });
-        }  
+        if(user) return res.status(400).json("User with the give studentCode already exist...");
      
-        if (!studentCode || !validator.isNumeric(studentCode) || studentCode.length !== 10) {
-            const errorMessage = "Invalid student code. It must be a 10-digit number.";
-            return res.render('register', { errorMessage });
-        }
-
-        
-    
-        if(!validator.isStrongPassword(password)){
-            const errorMessage = "Must be a strong password..";
-            return res.render('register', { errorMessage });
-        }
+        if(!username || !studentCode || !password) return res.status(400).json("All fields are required...");
+     
+     
+        if(!validator.isNumeric(studentCode))
+        return res.status(400).json("Email must be valid...");
+     
+        if(!validator.isStrongPassword(password))
+        return res.status(400).json("Must be a strong password..");
      
         user = new userModel( {username, studentCode, level, password} )  
 
@@ -56,18 +42,18 @@ router.post("/", async (req, res) => {
 
         const salt = await bcrypt.genSalt(10)
         user.password = await bcrypt.hash(password, salt)   
+        const token = createToken(user._id) 
         await user.save()
         console.log(user)
 
-        const token = createToken(user._id) 
      
         await user.save()
-        res.status(200).json({_id: user._id, username, studentCode, token});
+        // res.status(200).json({_id: user._id, username, studentCode, token});
         res.redirect("/login");
     } catch (error) {
         console.log(error) 
         
-        res.status(500).json(error)
+        res.status(500).json(error) 
     }
 
 })

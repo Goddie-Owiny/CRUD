@@ -36,14 +36,14 @@ router.post("/", async (req, res) => {
         // You can also redirect here, but make sure you send the token or user data to the frontend
         // res.status(200).json({ _id: user._id, name: user.name, studentCode, token });
         res.redirect("/")
-        res.send("Logged in as ${name}");
+        console.log(`Logged in as ${name}`);
     } catch (error) { 
         console.log(error);
         // res.status(500).json("An error occurred during login");    
     }
 });
 
-//logout route
+
 
 
 module.exports = router;

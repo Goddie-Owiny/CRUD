@@ -7,20 +7,18 @@
 .homepage{
     background: url(./pexels-stanley-morales-1454360.jpg);
     width: 100%;
-    height: 100%;
+    height: auto;
     background-size: cover;
     background-repeat: no-repeat;    
     
 }
 
+
+
 .head .brace-head{
     color: #3176b1;
 }
 
-.head h2{
-    color: white;
-    z-index: 1;
-}
 
 .head {
     position: absolute;
@@ -35,20 +33,26 @@
     text-align: center;
 }
 
+.head h2{
+    font-size: 2vw;
+    color: white;
+    z-index: 1;
+}
+
 .head h1 {
     letter-spacing: 0.2ch;
-    font-size: 300%;
+    font-size: 3vw;
     font-weight: 700;
-    line-height: 56px;
     color: #3176b1;
+    font-family: 'georgia';
 }
 
 .head h4 {
     letter-spacing: 0.2ch;
-    font-size: 5ch;
+    font-size: 3vw;
     font-weight: 700;
-    line-height: 56px;
     color: #71c3e1;
+    font-family: 'century gothic';
 }
 
 .head::before {
@@ -65,15 +69,16 @@
 
 /* login style */
 
-#dp{position: absolute;
+#dp{
     top: 10%;
     left: 70%;
     border: 3px solid #9A616D;
     width: 90px;
     height: 90px;
     border-radius: 50%;        
-    display: inline;
-    align-items: end;
+    position: relative;
+    display: flex;
+    align-items: center;
     align-content: center;
 }
 
