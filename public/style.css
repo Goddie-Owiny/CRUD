@@ -5,12 +5,11 @@
 }
 
 .homepage{
-    background: url(./pexels-stanley-morales-1454360.jpg);
+    background-image: url(./pexels-stanley-morales-1454360.jpg);
     width: 100%;
     height: auto;
     background-size: cover;
     background-repeat: no-repeat;    
-    
 }
 
 
@@ -57,7 +56,7 @@
 
 .head::before {
     content: "";
-    background: rgba(0, 0, 0, 0.267);
+    background: rgba(0, 0, 0, 0.301);
     position: absolute;
     bottom: 0;
     top: 0;
@@ -113,3 +112,4 @@ form, a{
     color: red;
 }
 
+ 
