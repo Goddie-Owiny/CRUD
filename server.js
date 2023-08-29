@@ -29,8 +29,10 @@ app.set('views', './views')
 app.set('view engine', 'ejs')
 
 
-app.get("/", (req,res) =>{
-res.render("home.ejs")
+app.get("/", (req, res) =>{
+    let name = "GODDIE"
+
+    res.render("home", { loginname: name })
 })
 
 
@@ -43,7 +45,7 @@ app.use('/login', loginRoute);
 
 
 app.get("/login", (req, res) =>{
-    res.render("login.ejs")
+    res.render("login")
 })
 
 app.get('/logout', (req, res) => {
@@ -54,14 +56,13 @@ app.get('/logout', (req, res) => {
 
 
 app.get("/register", (req, res) =>{
-    res.render("register.ejs")
+    res.render("register") 
 })
-
 
 const uri = process.env.ATLAS_URI;
 const port = process.env.PORT || 8585
 
-//mongoose connection to DB
+//mongoose connection to DB 
 mongoose.connect(uri, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
