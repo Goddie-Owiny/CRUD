@@ -22,13 +22,13 @@ router.post("/", async (req, res) => {
         const user = await userModel.findOne({ studentCode });
 
         if (!user) {
-            return res.status(400).json("Invalid student code or password...");
+            return res.status(400).json("Sorry, can't find Student with the given Code...");
         }
 
         const isValidPassword = await bcrypt.compare(password, user.password);
 
         if (!isValidPassword) {
-            return res.status(400).json("Invalid student code or password");
+            return res.status(400).json("Invalid password, Enter a correct password to log in");
         }
 
         const token = createToken(user._id);

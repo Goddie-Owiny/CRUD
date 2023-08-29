@@ -41,11 +41,11 @@ router.post("/", async (req, res) => {
      
 
         const salt = await bcrypt.genSalt(10)
-        user.password = await bcrypt.hash(password, salt)   
+        user.password = await bcrypt.hash(password, salt)    
         const token = createToken(user._id) 
         await user.save()
-        console.log(user)
-
+        // console.log(user)
+ 
      
         await user.save()
         // res.status(200).json({_id: user._id, username, studentCode, token});
