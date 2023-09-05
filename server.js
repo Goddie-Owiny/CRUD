@@ -50,7 +50,7 @@ app.get("/login", (req, res) =>{
 
 app.get('/logout', (req, res) => {
     req.session.destroy(() => {
-        res.redirect('/login')
+        res.redirect('/login') 
     })
 })
 
@@ -58,6 +58,8 @@ app.get('/logout', (req, res) => {
 app.get("/register", (req, res) =>{
     res.render("register") 
 })
+
+
 
 const uri = process.env.ATLAS_URI;
 const port = process.env.PORT || 8585
